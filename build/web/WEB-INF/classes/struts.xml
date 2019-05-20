@@ -1,0 +1,42 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <package name="default" namespace="/" extends="struts-default">
+        <default-action-ref name="index"></default-action-ref>
+        <action name="index">
+            <result>views/index.jsp</result>
+        </action>
+        <action name="users" class="web.UserAction" method="index">
+            <result name="success">views/index.jsp</result>
+        </action>
+        <action name="save" class="web.UserAction" method="save">
+            <result name="success">views/succes.jsp</result>
+            <result name="failure">views/echec.jsp</result>
+        </action>
+        <action name="connexion">
+            <result>views/connexion.jsp</result>
+        </action>
+        <action name="visitorView">
+            <result>views/visitorView.jsp</result>
+        </action>
+        <action name="connect" class="web.UserAction" method="connexion">
+            <result name="adminView">views/adminView.jsp</result>
+            <result name="visitorView">view/visitorView.jsp</result>
+            <result name="failure">views/echec.jsp</result>
+        </action>
+        <action name="getAll" class="web.UserAction" method="getAll">
+            <result name="success">views/listView.jsp</result>
+            <result name="failure">views/echec.jsp</result>
+        </action>
+        <action name="adminView">
+            <result>views/adminView.jsp</result>
+        </action>
+        <action name="activateUser" class="web.UserAction" method="activateUser">
+            <result name="admin">views/adminView.jsp</result>
+            <result name="failure">views/echec.jsp</result>
+        </action>
+    </package>
+</struts>
