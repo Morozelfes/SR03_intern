@@ -17,7 +17,7 @@ public class ConnectionMySQL {
     /**
 	 * URL de connection
 	 */
-	private static String url = "jdbc:postgresql://localhost:5432/Societe";
+	private static String url = "jdbc:mysql://localhost:3306/sr03/sr03/intern";
 	/**
 	 * Nom du user
 	 */
