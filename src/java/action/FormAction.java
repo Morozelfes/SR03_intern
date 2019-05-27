@@ -7,6 +7,7 @@ package action;
 
 import Model.Form;
 import Model.FormDAO;
+import Model.Question;
 import Model.Theme;
 import Model.ThemeDAO;
 import java.sql.SQLException;
@@ -21,6 +22,7 @@ public class FormAction {
     public ArrayList<Form> forms = new ArrayList<>();
     public Theme theme = new Theme();
     public ArrayList<Theme> themes = new ArrayList<>();
+    public ArrayList<Question> questions = new ArrayList<>();
     public int modifyId;
     
     public String addForm() throws SQLException {
@@ -125,4 +127,13 @@ public class FormAction {
     public void setModifyId(int modifyId) {
         this.modifyId = modifyId;
     }
+
+    public ArrayList<Question> getQuestions() {
+        return questions;
+    }
+
+    public void setQuestions(ArrayList<Question> questions) {
+        this.questions = questions;
+    }
+    
 }
