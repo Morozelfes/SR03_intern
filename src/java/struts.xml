@@ -5,38 +5,77 @@
 <struts>
     <!-- Configuration for the default package. -->
     <package name="default" namespace="/" extends="struts-default">
-        <default-action-ref name="index"></default-action-ref>
+        <default-action-ref name="adminView"></default-action-ref>
+        
         <action name="index">
-            <result>views/index.jsp</result>
+            <result>index.jsp</result>
         </action>
-        <action name="users" class="web.UserAction" method="index">
-            <result name="success">views/index.jsp</result>
+
+
+        <action name="adminView">
+            <result>admin/adminView.jsp</result>
         </action>
-        <action name="save" class="web.UserAction" method="save">
-            <result name="success">views/succes.jsp</result>
-            <result name="failure">views/echec.jsp</result>
+
+
+        <action name="usersManagement" class="action.userManagement">
+            <result name="success">admin/usersManagement.jsp</result>
         </action>
+        <action name="addUserForm">
+            <result>admin/add/addUserForm.jsp</result>
+        </action>
+        <action name="addUser" class="action.UserAction" method="addUser">
+            <result name="success">admin/usersManagement.jsp</result>
+        </action>
+        <action name="modifyUser" class="action.UserAction" method="modifyUser">
+            <result name="success">admin/modify/modifyUser.jsp</result>
+            <result name="failure">echec.jsp</result>
+        </action>
+        <action name="modifyUserSubmit" class="action.UserAction" method="modifyUserSubmit">
+            <result name="success">admin/usersManagement.jsp</result>
+        </action>
+        <action name="activateUser" class="action.UserAction" method="activateUser">
+            <result name="success">admin/usersManagement.jsp</result>
+            <result name="failure">echec.jsp</result>
+        </action>
+
+        
+        <action name="formManagement" class="action.FormAction" method="listForm">
+            <result>admin/formsManagement.jsp</result>
+        </action>
+        <action name="addTheme" class="action.FormAction" method="addTheme">
+            <result name="success">admin/formsManagement.jsp</result>
+        </action>
+        <action name="addForm" class="action.FormAction" method="listTheme">
+            <result name="success">admin/add/addForm.jsp</result>
+        </action>
+        <action name="addFormSubmit" class="action.FormAction" method="addForm">
+            <result name="success">admin/formsManagement.jsp</result>
+        </action>
+        <action name="activateForm" class="action.FormAction" method="activateForm">
+            <result name="success">admin/formsManagement.jsp</result>
+        </action>
+        <action name="modifyForm" class="action.FormAction" method="modifyForm">
+            <result name="success">admin/modify/modifyForm.jsp</result>
+        </action>
+        <action name="modifyFormSubmit" class="action.FormAction" method="modifyFormSubmit">
+            <result name="success">admin/formsManagement.jsp</result>
+        </action>
+
+
         <action name="connexion">
-            <result>views/connexion.jsp</result>
+            <result>connexion.jsp</result>
         </action>
         <action name="visitorView">
-            <result>views/visitorView.jsp</result>
+            <result>visitorView.jsp</result>
         </action>
-        <action name="connect" class="web.UserAction" method="connexion">
-            <result name="adminView">views/adminView.jsp</result>
-            <result name="visitorView">view/visitorView.jsp</result>
-            <result name="failure">views/echec.jsp</result>
+        <action name="connect" class="action.UserAction" method="connexion">
+            <result name="adminView">admin/adminView.jsp</result>
+            <result name="visitorView">visitorView.jsp</result>
+            <result name="failure">echec.jsp</result>
         </action>
-        <action name="getAll" class="web.UserAction" method="getAll">
-            <result name="success">views/listView.jsp</result>
-            <result name="failure">views/echec.jsp</result>
-        </action>
-        <action name="adminView">
-            <result>views/adminView.jsp</result>
-        </action>
-        <action name="activateUser" class="web.UserAction" method="activateUser">
-            <result name="admin">views/adminView.jsp</result>
-            <result name="failure">views/echec.jsp</result>
+        <action name="getAll" class="action.UserAction" method="getAll">
+            <result name="success">admin/listUser.jsp</result>
+            <result name="failure">echec.jsp</result>
         </action>
     </package>
 </struts>

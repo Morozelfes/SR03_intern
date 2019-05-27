@@ -21,13 +21,14 @@
                 <th>Status</th>
                 <th>Admin</th>
                 <th>Gender</th>
+                <th>Modifier</th>
                 <th>Activer/Désactiver</th>
                 
             </tr>         
             <s:iterator value = "users" status="user">
             <tr>
-                <td><s:property value = "lastName"/></td>
-                <td><s:property value = "firstName"/></td>
+                <td><s:property value = "lastname"/></td>
+                <td><s:property value = "firstname"/></td>
                 <td><s:property value = "email"/></td>
                 <td><s:property value = "company"/></td>
                 <td><s:property value = "tel"/></td>
@@ -35,10 +36,15 @@
                 <td><s:property value = "is_admin"/></td>
                 <td><s:property value= "gender"/></td>
                 <td>
+                    <s:form action="modifyUser" method="post">
+                        <input type="hidden" value=<s:property value="email"/>  name="modifyEmail" />
+                        <s:submit value="Modifier"/>
+                    </s:form>
+                </td>
+                <td>
                     <s:form action="activateUser" method="post">
-                        <input id="userID" name="id" type="hidden" value=<s:property value = "email"/>>
-                        <s:hidden name="product" value="%{#request.prodAprob.id}"/>
-                        <s:submit value="Activer/désactiver"></s:submit>
+                        <input type="hidden" value=<s:property value="email"/>  name="modifyEmail" />
+                        <s:submit value="Activer/Désactiver"/>
                     </s:form>
                 </td>
             </tr>

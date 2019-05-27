@@ -11,8 +11,14 @@
         <div>
             Bienvenue Administrateur
         </div>
-            <s:form action="getAll" method="post">
-                <s:submit value="Lister users"></s:submit>
-            </s:form>          
+        <form action="userManagement">
+            <input type="submit" value="Gestion des users"/>
+        </form> 
+        <s:form action="getAll" method="post">
+            <s:submit value="Listage des users"></s:submit>
+        </s:form>    
+        <s:form action="formManagement" method="post">
+            <s:submit value="Gestion des Formulaires"></s:submit>
+        </s:form>
     </body>
 </html>

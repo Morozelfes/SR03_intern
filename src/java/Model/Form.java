@@ -5,17 +5,48 @@
  */
 package Model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Junior
  */
 public class Form {
-	private String subject;
-	private String status;
+    private int id;
+    private String theme;
+    private String subject;
+    private String status;
+    private int nb_question;
+    private int nb_answer;
+    private ArrayList<Question> questions;
 
-    public Form(String subject) {
+    public Form() {
+    }
+
+    public Form(int id, String theme, String subject, String status, int nb_question, int nb_answer,ArrayList<Question> questions) {
+        this.id = id;
+        this.theme = theme;
         this.subject = subject;
-        this.subject = "actif";
+        this.status = status;
+        this.questions = questions;
+        this.nb_answer = nb_answer;
+        this.nb_question = nb_question;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTheme() {
+        return theme;
+    }
+
+    public void setTheme(String theme) {
+        this.theme = theme;
     }
 
     public String getSubject() {
@@ -33,10 +64,30 @@ public class Form {
     public void setStatus(String status) {
         this.status = status;
     }
-        
-    @Override   
-    public String toString() {
-        return "Form(" + "subject= " + subject + ", status= " + status + ")" ;
+
+    public ArrayList<Question> getQuestions() {
+        return questions;
     }
+
+    public void setQuestions(ArrayList<Question> questions) {
+        this.questions = questions;
+    }
+
+    public int getNb_question() {
+        return nb_question;
+    }
+
+    public void setNb_question(int nb_question) {
+        this.nb_question = nb_question;
+    }
+
+    public int getNb_answer() {
+        return nb_answer;
+    }
+
+    public void setNb_answer(int nb_answer) {
+        this.nb_answer = nb_answer;
+    }
+    
     
 }

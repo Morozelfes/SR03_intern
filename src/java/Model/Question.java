@@ -5,27 +5,33 @@
  */
 package Model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Junior
  */
 public class Question {
-    private int key;
+    private int id;
     private String statement;
     private String status;
+    private ArrayList<Answer> answers;
+    
+    public Question(){}
 
-    public Question(int key, String statement, String status) {
-        this.key = key;
+    public Question(int id, String statement, String status, ArrayList<Answer> answers) {
+        this.id = id;
         this.statement = statement;
         this.status = status;
+        this.answers = answers;
     }
 
-    public int getKey() {
-        return key;
+    public int getId() {
+        return id;
     }
 
-    public void setKey(int key) {
-        this.key = key;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getStatement() {
@@ -43,9 +49,17 @@ public class Question {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    public ArrayList<Answer> getAnswers() {
+        return answers;
+    }
+
+    public void setAnswers(ArrayList<Answer> answers) {
+        this.answers = answers;
+    }
     
     @Override   
     public String toString() {
-        return "Question(" + "key= " + key + ", statement= " + statement + ", status= " + status + ")" ;
+        return "Question(" + "id= " + id + ", statement= " + statement + ", status= " + status + ")" ;
     }
 }

@@ -10,15 +10,17 @@ package Model;
  * @author Junior
  */
 public class Answer {
-    private int key;
+    private int id;
     private String statement;
     private String status;
     private int rank;
     private boolean is_right;
     private int question_id;
+    
+    public Answer() {}
 
-    public Answer(int key, String statement, String status, int rank, boolean is_right, int question_id) {
-        this.key = key;
+    public Answer(int id, String statement, String status, int rank, boolean is_right, int question_id) {
+        this.id = id;
         this.statement = statement;
         this.status = status;
         this.rank = rank;
@@ -26,12 +28,12 @@ public class Answer {
         this.question_id = question_id;
     }
 
-    public int getKey() {
-        return key;
+    public int getId() {
+        return id;
     }
 
-    public void setKey(int key) {
-        this.key = key;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getStatement() {
@@ -76,6 +78,6 @@ public class Answer {
     
     @Override   
     public String toString() {
-        return "Answer(" + "key= " + key + ", statement= " + statement + ", status= " + status + ", rank=" + rank + "right= " + is_right + "question_id= " + question_id + ")" ;
+        return "Answer(" + "id= " + id + ", statement= " + statement + ", status= " + status + ", rank=" + rank + "right= " + is_right + "question_id= " + question_id + ")" ;
     }
 }

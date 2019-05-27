@@ -13,59 +13,95 @@ import java.util.Date;
  *
  * @author Junior
  */
-        
 public class User {
-    private String lastName;
-    private String firstName;
-    private String email;
-    private String gender;
-    private String pwd;
-    private String tel;
-    private String date_creat;
-    private String status;
-    private boolean is_admin; 
-    private String company;
+    protected int id;
+    protected String lastname;
+    protected String firstname;
+    protected String email;
+    protected String gender="male";
+    protected String password="default";
+    protected String tel;
+    protected String date_creat;
+    public String status="inactif";
+    public boolean is_admin; 
+    protected String company;
     
     public User() {
-        
+        /*User.this.id = 0;
+        User.this.company = "default";
+        User.this.firstname = "default";
+        User.this.lastname = "default";
+        User.this.tel = "default";
+        User.this.email = "default";
+        User.this.password = "default";
+        User.this.is_admin = false;
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date date = new Date();
+        this.date_creat = dateFormat.format(date);*/
+    }
+    
+    public User(int id, String lastname, String firstname, String email, String password, String tel, String company, String date_creat) {
+        User.this.id = id;
+        User.this.lastname = lastname;
+        User.this.firstname = firstname;
+        User.this.email = email;
+        User.this.password = password;
+        User.this.tel = password;
+        User.this.company = company;
+        User.this.date_creat = date_creat;
+    }
+    
+    public User(String lastname, String firstname, String email, String password, String tel, String company, String date_creat, boolean is_admin, String status, String gender) {
+        User.this.lastname = lastname;
+        User.this.firstname = firstname;
+        User.this.email = email;
+        User.this.password = password;
+        User.this.tel = tel;
+        User.this.company = company;
+        User.this.date_creat = date_creat;
+        User.this.is_admin = is_admin;
+        User.this.status = status;
+        User.this.gender = gender;
     }
 
-    public User(String lastName, String firstName, String email, String gender, String pwd, String tel, boolean is_admin, String company) {
+    public User(String lastname, String firstname, String email, String gender, String password, String tel, boolean is_admin, String company) {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date date = new Date();
 
-        this.lastName = lastName;
-        this.firstName = firstName;
+        this.lastname = lastname;
+        this.firstname = firstname;
         this.email = email;
         this.gender = gender;
-        this.pwd = pwd;
+        this.password = password;
         this.is_admin = is_admin;
         this.date_creat = dateFormat.format(date);
         this.tel = tel;
         this.status = "actif";
         this.company = company;
     }
-
-    public User(String lastName, String firstName, String email) {
-        this.lastName = lastName;
-        this.firstName = firstName;
-        this.email = email;
+    
+    public int getId() {
+        return id;
     }
 
-    public String getLastName() {
-        return lastName;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public String getLastname() {
+        return lastname;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
     public String getEmail() {
@@ -84,12 +120,12 @@ public class User {
         this.gender = gender;
     }
 
-    public String getPwd() {
-        return pwd;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPwd(String pwd) {
-        this.pwd = pwd;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getTel() {
@@ -134,6 +170,6 @@ public class User {
        
     @Override
     public String toString() {
-        return "User{" + "lastname=" + lastName + ", firstName=" + firstName + ", email=" + email +  ", gender=" + gender + ", pwd=" + pwd + ", tel=" + tel + ", status=" + status + ", date de création=" + date_creat + ", admin=" + is_admin + ", company=" + company + ')';
+        return "User{" + "lastname=" + lastname + ", firstname=" + firstname + ", email=" + email +  ", gender=" + gender + ", password=" + password + ", tel=" + tel + ", status=" + status + ", date de création=" + date_creat + ", admin=" + is_admin + ", company=" + company + ')';
     }
 }
